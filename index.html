@@ -39,10 +39,29 @@
                   <li><a href="#">Another action</a></li>
                   <li><a href="#">Something else here</a></li>
                   <li class="divider"></li>
-                  <li><button id ="sign-out" class="btn btn-primary btn-block" type="submit">Change Password</button></li>
+                  <!--added change pass input form-->
+                  <form class="form-inline" id="change-password">
+                    <div class="form-group">
+                      <input type="password" class="form-control" name="passwords[old]" placeholder="Old Password">
+                      <input type="password" class="form-control" name="passwords[new]" placeholder="New Password">
+                      <button class="btn btn-primary btn-block" type="submit">Change Password</button>
+                    </div>
+                  </form>
+                  <!--added change pass input form-->
                   <li class="divider"></li>
                   <li><button id ="sign-out" class="btn btn-primary btn-block" type="submit">Sign Out</button></li>
+
+                  <!-- sign up added-->
+                  <li class="divider"></li>
+                  <form class="form-inline" id="sign-up">
+                    <div class="form-group">
+                      <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+                      <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+                      <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                    </div>
+                  </form>
                 </ul>
+                <!-- sign up added-->
               </li>
             </ul>
             <form class="navbar-form navbar-left" role="search">
@@ -71,7 +90,7 @@
                         <div class="form-group">
                           <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
                           <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
-                          <button id="sign-in" class="btn btn-primary btn-block" type="submit">Sign In</button>
+                          <button class="btn btn-primary btn-block" type="submit">Sign In</button>
                         </div>
                       </form>
 
@@ -92,6 +111,7 @@
       										</div>
 
                         END OF ORIGINAL inputs-->
+                        
       										<div class="form-group">
       											 <button id="sign-out" type="submit" class="btn btn-primary btn-block">Sign Out</button>
       										</div>
@@ -103,7 +123,7 @@
       								 </form>
       							</div>
       							<div class="bottom text-center">
-      								New here ? <a href="#"><b>Join Us</b></a>
+      								<button type="submit" id= "sign-up" class="btn btn-primary btn-block">New here? Sign up!</button>
       							</div>
       					 </div>
       				</li>

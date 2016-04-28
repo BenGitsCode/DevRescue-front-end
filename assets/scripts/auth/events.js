@@ -14,7 +14,7 @@ const signCheck = () => {
     authApi.signUp(authUi.success, authUi.failure, data);
     console.log(data);
   });
-  
+
   $('#sign-in').on('submit', function (event) {
     let data = getFormFields(this);
     event.preventDefault();
