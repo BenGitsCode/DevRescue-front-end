@@ -3,6 +3,11 @@
 const app = require('../app-data');
 // const newGame = require('./index.js');
 
+let currentUser = {
+  token:'',
+  id: undefined
+};
+
 const signInSuccess = (data) => {
   app.user = data.user;
   console.log(app);
@@ -12,7 +17,7 @@ const signInSuccess = (data) => {
 const signOutSuccess = () => {
   app.user = null;
   console.log(app);
-  console.log("You signed in bro. Sweet!");
+  console.log("You signed OUT bro. Sweet!");
 };
 
 const success = (data) => {

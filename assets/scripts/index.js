@@ -12,7 +12,7 @@ const authApi = require('./auth/api');
 const authUi = require('./auth/ui');
 
 
-const signCheck = () => {
+
 
   $('#sign-up').on('submit', function (event) {
     event.preventDefault();
@@ -40,16 +40,3 @@ const signCheck = () => {
     authApi.changePass(authUi.success, authUi.failure, data);
     console.log(data);
   });
-};
-
-
-
-
-
-
-
-
-
-  module.exports = {
-   signCheck,
-  };

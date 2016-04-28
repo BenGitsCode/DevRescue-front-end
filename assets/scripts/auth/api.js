@@ -40,12 +40,10 @@ const signOut = (success, failure) => {
 };
 
 const changePass = (success, failure, data) => {
-
   $.ajax({
     method: "PATCH",
     url: app.api + '/change-password/' + app.user.id,
     data,
-    // dataProcessing: false,
     headers: {
       Authorization: 'Token token='+ app.user.token,
     },
@@ -59,5 +57,6 @@ const changePass = (success, failure, data) => {
 module.exports = {
   signUp,
   signIn,
-  signOut
+  signOut,
+  changePass
 };
