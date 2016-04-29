@@ -72,7 +72,7 @@ const newRescue = (success, failure, data) => {
   .fail(failure);
 };
 
-const showRescue = (success, failure, data) => {
+const showRescue = (success, failure) => {
   $.ajax({
     method: "GET",
     url: app.api +'/users/' + ui.currentUser.id +'/rescues/',
@@ -80,13 +80,13 @@ const showRescue = (success, failure, data) => {
     headers: {
       Authorization: "Token token=" + ui.currentUser.token
     },
-    data: {
-      "rescue": {
-        "title": data.rescue.title,
-        "url": data.rescue.url,
-        "tag": data.rescue.tag,
-      }
-    }
+    // data: {
+    //   "rescue": {
+    //     "title": rescue.title,
+    //     "url": rescue.url,
+    //     "tag": rescue.tag,
+    //   }
+    // }
   })
   .done(success)
   .fail(failure);

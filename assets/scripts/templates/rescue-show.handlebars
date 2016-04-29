@@ -1,8 +1,9 @@
+{{#each rescues}}
 {{#each this}}
-    <div class="content">
-  <p>{{this.company}}</p>
-    <p></p>
-  <p>{{this.last_name}}</p>
-  </div>
+    <div class="show-rescue">
+  {{this.title}}
+  {{this.url}}
+  {{this.tag}}
+    </div>
   {{/each}}
   {{/each}}

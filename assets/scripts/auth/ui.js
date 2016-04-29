@@ -29,11 +29,18 @@ const failure = (error) => {
   console.error(error);
 };
 
+// this function gets handlebars template and appends it to my html
+const showRescues = (rescues) => {
+  let rescueListingTemplate = require('../templates/rescue-show.handlebars');
+    $('.content').append(rescueListingTemplate({rescues}));
+};
+
 module.exports = {
   failure,
   success,
   signOutSuccess,
   signInSuccess,
   app,
-  currentUser
+  currentUser,
+  showRescues
 };
