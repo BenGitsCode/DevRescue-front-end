@@ -92,6 +92,25 @@ const showRescue = (success, failure) => {
   .fail(failure);
 };
 
+//Update Rescue
+const editRescue = (success, failure, data) => {
+  let rescue_id = localStorage.getItem('ID');
+ $.ajax({
+   method: 'PATCH',
+   url: app.api + 'rescues/' + rescue_id,
+   data: {
+     "album": {
+       "title": data.rescue.title,
+       "url": data.rescue.url,
+       "tag": data.rescue.tag,
+     }
+   },
+   headers:{
+     Authorization: "Token token=" + ui.currentUser.token,
+   }
+ }).done(success)
+ .fail(failure);
+};
 
 
 module.exports = {
@@ -100,5 +119,6 @@ module.exports = {
   signOut,
   changePass,
   newRescue,
-  showRescue
+  showRescue,
+  editRescue
 };
