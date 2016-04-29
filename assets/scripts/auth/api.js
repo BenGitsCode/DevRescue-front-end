@@ -1,6 +1,7 @@
 'use strict';
 
 const app = require('../app-data');
+const ui = require('./ui');
 
 
 const signUp = (success, failure, data) => {
@@ -52,11 +53,27 @@ const changePass = (success, failure, data) => {
   .fail(failure);
 };
 
+const newRescue = (success, failure, data) => {
+  $.ajax({
+    method: "POST",
+    url: app.api +'users/' + ui.currentUser.id + '/rescues/',
+    dataType: 'json',
+    data,
+    headers: {
+      Authorization: "Token token=" + ui.currentUser.token
+    },
+  })
+  .done(success)
+  .fail(failure);
+
+};
+
 
 
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePass
+  changePass,
+  newRescue
 };

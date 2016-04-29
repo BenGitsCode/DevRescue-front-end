@@ -34,4 +34,5 @@ module.exports = {
   signOutSuccess,
   signInSuccess,
   app,
+  currentUser
 };
