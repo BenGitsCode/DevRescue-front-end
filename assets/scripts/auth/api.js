@@ -28,7 +28,6 @@ const signIn = (success, failure, data) => {
 };
 
 const signOut = (success, failure) => {
-  // if (!app.user) bad;
   $.ajax({
     method: "DELETE",
     url: app.api + '/sign-out/' + app.user.id,
@@ -54,18 +53,24 @@ const changePass = (success, failure, data) => {
 };
 
 const newRescue = (success, failure, data) => {
+  console.log(app)
   $.ajax({
     method: "POST",
-    url: app.api +'users/' + ui.currentUser.id + '/rescues/',
+    url: app.api +'/users/' + ui.currentUser.id +'/rescues/',
     dataType: 'json',
-    data,
     headers: {
       Authorization: "Token token=" + ui.currentUser.token
     },
+    data: {
+      "rescue": {
+        "title": data.rescue.title,
+        "url": data.rescue.url,
+        "tag": data.rescue.tag,
+      }
+    }
   })
   .done(success)
   .fail(failure);
-
 };
 
 

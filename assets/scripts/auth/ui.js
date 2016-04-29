@@ -9,7 +9,8 @@ let currentUser = {
 };
 
 const signInSuccess = (data) => {
-  app.user = data.user;
+  currentUser.token = data.user.token;
+  currentUser.id = data.user.id;
   console.log(app);
   console.log("Sign in successful");
 };
