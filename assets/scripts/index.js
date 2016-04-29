@@ -41,10 +41,18 @@ const authUi = require('./auth/ui');
     console.log(data);
   });
 
-  $('#new-rescue').on('submit', function (event) {
+  $('#show-rescue').on('submit', function (event) {
     event.preventDefault();
     let data = getFormFields(this);
     authApi.newRescue(authUi.success, authUi.failure, data);
+    console.log(authUi.currentUser);
+    console.log(data);
+  });
+
+  $('#get-rescue').on('submit', function (event) {
+    event.preventDefault();
+    let data = getFormFields(this);
+    authApi.getRescue(authUi.success, authUi.failure, data);
     console.log(authUi.currentUser);
     console.log(data);
   });
