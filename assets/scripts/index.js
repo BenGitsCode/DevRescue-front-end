@@ -51,5 +51,5 @@ const authUi = require('./auth/ui');
     event.preventDefault();
     let data = getFormFields(this);
     authApi.newRescue(authUi.newRescue, authUi.failure, data);
-    console.log(authUi.currentUser);
+    console.log(data);
   });
