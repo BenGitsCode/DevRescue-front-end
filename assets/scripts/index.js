@@ -40,3 +40,10 @@ const authUi = require('./auth/ui');
     authApi.changePass(authUi.success, authUi.failure, data);
     console.log(data);
   });
+
+  $('#new-rescue').on('submit', function (event) {
+    event.preventDefault();
+    let data = getFormFields(this);
+    authApi.signUp(authUi.success, authUi.failure, data);
+    console.log(data);
+  });
