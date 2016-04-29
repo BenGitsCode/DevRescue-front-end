@@ -44,6 +44,6 @@ const authUi = require('./auth/ui');
   $('#new-rescue').on('submit', function (event) {
     event.preventDefault();
     let data = getFormFields(this);
-    authApi.signUp(authUi.success, authUi.failure, data);
+    authApi.newRescue(authUi.success, authUi.failure, data);
     console.log(data);
   });
