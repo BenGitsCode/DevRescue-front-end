@@ -53,9 +53,28 @@ const changePass = (success, failure, data) => {
 };
 
 const newRescue = (success, failure, data) => {
-  console.log(app)
   $.ajax({
     method: "POST",
+    url: app.api +'/users/' + ui.currentUser.id +'/rescues/',
+    dataType: 'json',
+    headers: {
+      Authorization: "Token token=" + ui.currentUser.token
+    },
+    data: {
+      "rescue": {
+        "title": data.rescue.title,
+        "url": data.rescue.url,
+        "tag": data.rescue.tag,
+      }
+    }
+  })
+  .done(success)
+  .fail(failure);
+};
+
+const showRescue = (success, failure, data) => {
+  $.ajax({
+    method: "GET",
     url: app.api +'/users/' + ui.currentUser.id +'/rescues/',
     dataType: 'json',
     headers: {
@@ -80,5 +99,6 @@ module.exports = {
   signIn,
   signOut,
   changePass,
-  newRescue
+  newRescue,
+  showRescue
 };
