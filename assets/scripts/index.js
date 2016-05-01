@@ -21,7 +21,7 @@ const authUi = require('./auth/ui');
     console.log(data);
   });
 
-  $('#sign-in').on('submit', function (event) {
+  $('.sign-in').on('submit', function (event) {
     let data = getFormFields(this);
     event.preventDefault();
     authApi.signIn(authUi.signInSuccess, authUi.failure, data);
