@@ -55,3 +55,10 @@ const authUi = require('./auth/ui');
     authApi.newRescue(authUi.newRescue, authUi.failure, data);
     console.log(data);
   });
+
+  $('#edit-rescue').on('submit', function (event) {
+    event.preventDefault();
+    let data = getFormFields(this);
+    authApi.editRescue(authUi.editRescue, authUi.failure, data);
+    console.log(data);
+  });
