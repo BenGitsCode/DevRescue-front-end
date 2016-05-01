@@ -49,8 +49,8 @@
                   </form>
                   <!--added change pass input form-->
                   <li class="divider"></li>
-                  <li><button id ="sign-out" class="btn btn-primary btn-block" type="submit">Sign Out</button></li>
-                  <!--
+
+
                   <!-- sign up added-->
 
                   <li class="divider"></li>
@@ -90,7 +90,7 @@
                           <button class="btn btn-primary btn-block" type="submit">Sign In</button>
                         </div>
                       </form>
-
+                        <!--
       										<div class="form-group">
       											 <button id="sign-out" type="submit" class="btn btn-primary btn-block">Sign Out</button>
       										</div>
@@ -98,6 +98,7 @@
       											 <label>
       											 <input type="checkbox"> keep me logged-in
       											 </label>
+                           -->
       										</div>
       								 </form>
       							</div>
@@ -115,34 +116,39 @@
 
       <button class="btn btn-primary btn-block show-rescue" type="submit">Get all Rescues</button>
 
+        <!-- SIGN UP -->
 
-    <!-- Sign up form -->
-    <form class="form-inline sign-up">
-      <div class="form-group">
-        <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
-        <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
-        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
-      </div>
-    </form>
-
-    <!-- SIGN IN MODAL -->
-    <!--social buttons
-    <div class="social-buttons">
-      <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-      <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+        <form class="form-inline sign-up">
+    <div class="form-group">
+      <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+      <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+      <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
     </div>
-    social buttons-->
+        </form>
 
-    <form class="form-inline sign-in">
+
+
+      <!-- SIGN IN-->
+      <form class="form-inline sign-in">
+        <div class="form-group">
+          <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+          <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+          <button class="btn btn-primary btn-block" type="submit">Sign In</button>
+        </div>
+      </form>
+      <!-- CHANGE PASS-->
+      <form class="form-inline change-password">
+        <div class="form-group">
+          <input type="password" class="form-control" name="passwords[old]" placeholder="Old Password">
+          <input type="password" class="form-control" name="passwords[new]" placeholder="New Password">
+          <button class="btn btn-primary btn-block" type="submit">Change Password</button>
+        </div>
+      </form>
+
+      <!-- SIGN OUT-->
       <div class="form-group">
-        <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
-        <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
-        <button class="btn btn-primary btn-block" type="submit">Sign In</button>
+         <button type="submit" class="btn btn-primary btn-block sign-out">Sign Out</button>
       </div>
-    </form>
-
-
-
 
       <!-- START THIS IS THE FORM FOR ADDING RESCUES -->
       <div class="container-fluid">

@@ -28,13 +28,13 @@ const authUi = require('./auth/ui');
     console.log(data);
   });
 
-  $('#sign-out').on('click', function (event) {
+  $('.sign-out').on('submit', function (event) {
     event.preventDefault();
     authApi.signOut(authUi.signOutSuccess, authUi.failure);
     console.log("signed out");
   });
 
-  $('#change-password').on('submit', function (event) {
+  $('.change-password').on('submit', function (event) {
     event.preventDefault();
     let data = getFormFields(this);
     authApi.changePass(authUi.success, authUi.failure, data);
