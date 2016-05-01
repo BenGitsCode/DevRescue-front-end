@@ -43,7 +43,7 @@ const authUi = require('./auth/ui');
 
   // RESCUE actions
 
-  $('#show-rescue').on('click', function (event) {
+  $('.show-rescue').on('click', function (event) {
     event.preventDefault();
     authApi.showRescue(authUi.showRescues, authUi.failure);
     console.log(authUi.currentUser);
