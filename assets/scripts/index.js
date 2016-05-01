@@ -14,7 +14,7 @@ const authUi = require('./auth/ui');
 
   // User actions
 
-  $('#sign-up').on('submit', function (event) {
+  $('.sign-up').on('submit', function (event) {
     event.preventDefault();
     let data = getFormFields(this);
     authApi.signUp(authUi.success, authUi.failure, data);
