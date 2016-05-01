@@ -40,7 +40,8 @@ for (var i = 0; i < authApi.rescues.length; i++) {
 
 const showRescues = (rescues) => {
   let rescueListingTemplate = require('../templates/rescue-show.handlebars');
-    console.log(rescueUrl);
+    // console.log(rescues.rescueUrl);
+    console.log(rescues);
     $('.content').append(rescueListingTemplate({rescues, rescueUrl}));
 };
 
