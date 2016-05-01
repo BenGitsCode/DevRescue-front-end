@@ -17,7 +17,8 @@ const signInSuccess = (data) => {
 };
 
 const signOutSuccess = () => {
-  app.user = null;
+  currentUser.token = "";
+  currentUser.id = undefined;
   console.log(app);
   console.log("You signed OUT bro. Sweet!");
 };

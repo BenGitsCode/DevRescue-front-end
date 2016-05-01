@@ -30,9 +30,9 @@ const signIn = (success, failure, data) => {
 const signOut = (success, failure) => {
   $.ajax({
     method: "DELETE",
-    url: app.api + '/sign-out/' + app.user.id,
+    url: app.api + '/sign-out/' + ui.currentUser.id,
     headers: {
-      Authorization: 'Token token='+ app.user.token,
+      Authorization: 'Token token='+ ui.currentUser.token,
     },
   })
   .done(success)
@@ -42,10 +42,10 @@ const signOut = (success, failure) => {
 const changePass = (success, failure, data) => {
   $.ajax({
     method: "PATCH",
-    url: app.api + '/change-password/' + app.user.id,
+    url: app.api + '/change-password/' + ui.currentUser.id,
     data,
     headers: {
-      Authorization: 'Token token='+ app.user.token,
+      Authorization: 'Token token='+ ui.currentUser.token,
     },
   })
   .done(success)

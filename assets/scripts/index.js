@@ -28,7 +28,7 @@ const authUi = require('./auth/ui');
     console.log(data);
   });
 
-  $('.sign-out').on('submit', function (event) {
+  $('.sign-out').on('click', function (event) {
     event.preventDefault();
     authApi.signOut(authUi.signOutSuccess, authUi.failure);
     console.log("signed out");
