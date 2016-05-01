@@ -12,7 +12,7 @@ const authApi = require('./auth/api');
 const authUi = require('./auth/ui');
 
 
-
+  // User actions
 
   $('#sign-up').on('submit', function (event) {
     event.preventDefault();
@@ -40,6 +40,8 @@ const authUi = require('./auth/ui');
     authApi.changePass(authUi.success, authUi.failure, data);
     console.log(data);
   });
+
+  // RESCUE actions
 
   $('#show-rescue').on('click', function (event) {
     event.preventDefault();

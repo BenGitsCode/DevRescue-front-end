@@ -2,6 +2,7 @@
 
 const app = require('../app-data');
 // const newGame = require('./index.js');
+const authApi = require('./api');
 
 let currentUser = {
   token:'',
@@ -30,9 +31,21 @@ const failure = (error) => {
 };
 
 // this function gets handlebars template and appends it to my html
+let rescueUrl = [];
+if (authApi.rescue) {
+for (var i = 0; i < authApi.rescues.length; i++) {
+  rescueUrl.append(rescues[i].rescue.url);
+}
+}
+
 const showRescues = (rescues) => {
   let rescueListingTemplate = require('../templates/rescue-show.handlebars');
-    $('.content').append(rescueListingTemplate({rescues}));
+    console.log(rescueUrl);
+    $('.content').append(rescueListingTemplate({rescues, rescueUrl}));
+};
+
+const editRescue = (rescues) => {
+  let rescueEditingTemplate = require('../templates/rescue-edit.handlebars');
 };
 
 module.exports = {

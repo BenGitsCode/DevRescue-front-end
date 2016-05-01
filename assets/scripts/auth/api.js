@@ -98,16 +98,16 @@ const editRescue = (success, failure, data) => {
  $.ajax({
    method: 'PATCH',
    url: app.api + 'rescues/' + rescue_id,
-   data: {
-     "album": {
-       "title": data.rescue.title,
-       "url": data.rescue.url,
-       "tag": data.rescue.tag,
-     }
-   },
    headers:{
      Authorization: "Token token=" + ui.currentUser.token,
    }
+  //  data: {
+  //    "rescue": {
+  //      "title": data.rescue.title,
+  //      "url": data.rescue.url,
+  //      "tag": data.rescue.tag,
+  //    }
+  //  },
  }).done(success)
  .fail(failure);
 };
