@@ -11,8 +11,8 @@
   <td>{{this.title}}</td>
   <td><a href="{{this.url}}">Rescue Me</a></td>
   <td>{{this.tag}}</td>
-  <td><button type="button" id="edit-rescue-btn" class="btn btn-primary edit-rescue" data-rescue-id="{{id}}" data-toggle="modal" data-target="#poopedit-rescue-modal">Update</button></td>
-  <td><button type="button" id="delete-rescue-btn" class="btn btn-danger delete-rescue" data-rescue-id="{{id}}">Delete</button></td>
+  <td><button type="button" class="btn btn-primary edit-rescue" data-rescue-id="{{id}}" data-toggle="modal" data-target="#jabbedit-rescue-modal">Update</button></td>
+  <td><button type="button"  class="btn btn-danger delete-rescue" data-rescue-id="{{id}}">Delete</button></td>
     </div>
 </tr>
   {{/each}}
@@ -21,3 +21,11 @@
   {{#each rescueUrl}}
     <h1>{{this}}</h1>
   {{/each}}
+
+
+{{!--
+id="delete-rescue-btn"
+id="edit-rescue-btn"
+
+
+  --}}

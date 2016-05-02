@@ -94,11 +94,11 @@ const showRescue = (success, failure) => {
 
 //Update Rescue
 const editRescue = (success, failure, data, id) => {
-    console.log(data);
-  let rescue_id = localStorage.getItem('ID');
+  // let rescue_id = localStorage.getItem('ID');
+  console.log(data, id);
   $.ajax({
     method: 'PATCH',
-    url: app.api + 'rescues/' + rescue_id,
+    url: app.api + '/rescues/' + id,
     data,
     headers:{
       Authorization: "Token token=" + ui.currentUser.token,

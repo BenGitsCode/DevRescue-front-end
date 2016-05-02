@@ -74,9 +74,10 @@ const authUi = require('./auth/ui');
     // lines 72-73 define id as the attribute of clicked td
   });
 
-  $('.edit-rescue-submit').on('submit', function (event) {
+  $('#edit-rescue').on('submit', function (event) {
     event.preventDefault();
     let id = $('.edit-rescue-btn').attr("data-rescue-id");
     let data = getFormFields(this);
+    console.log(data);
     authApi.editRescue(authUi.editRescueSuccess, authUi.failure, data, id);
   });

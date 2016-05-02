@@ -48,17 +48,13 @@ const showRescues = (rescues) => {
       event.preventDefault();
     $('#edit-rescue-modal').modal('show');
     localStorage.setItem('ID', $(this).attr('data-rescue-id'));
-    console.log($(this).attr('data-rescue-id'));
 });
 };
-const editRescue = (rescues) => {
-  let rescueEditingTemplate = require('../templates/rescue-edit.handlebars');
-};
+
 
 const editRescueSuccess = (data) => {
-  console.log("you edited shit!");
-  currentUser.token = data.user.token;
-  currentUser.id = data.user.id;
+  console.log("you edited this!");
+  console.log(data);
 };
 
 module.exports = {
