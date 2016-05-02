@@ -63,17 +63,17 @@ const authUi = require('./auth/ui');
   //   console.log(data);
   // });
 
-  $('#edit-rescue').on('click', function (event) {
+  // adding rescue id to the submit button so it knows what object in rescues to edit
+
+  $('.content').on('click', '.edit-rescue', function (event) {
     event.preventDefault();
     console.log($(this).attr('data-rescue-id'));
-    let id = $(".edit-rescue-btn").attr("data-rescue-id");
-    let data = getFormFields(this);
-    // authApi.editRescue(authUi.editRescueSuccess, authUi.failure, data, id);
+    let id = $(event.target).attr("data-rescue-id");
+    $('.edit-rescue-btn').attr("data-rescue-id", id);
   });
 
   $('.edit-rescue-submit').on('submit', function (event) {
     event.preventDefault();
-      console.log(data);
     console.log($(this).attr('data-rescue-id'));
     let data = getFormFields(this);
     authApi.editRescue(authUi.editRescueSuccess, authUi.failure, data, id);
