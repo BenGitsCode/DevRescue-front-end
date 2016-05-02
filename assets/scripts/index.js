@@ -6,7 +6,7 @@
 // use require without a reference to ensure a file is bundled
 require('./example');
 
-// const getFormFields = require('../../../lib/get-form-fields.js');
+// const getFormFields = require('../../get-form-fields.js');
 
 const authApi = require('./auth/api');
 const authUi = require('./auth/ui');
@@ -56,13 +56,6 @@ const authUi = require('./auth/ui');
     authApi.newRescue(authUi.success, authUi.failure, data);
     console.log(data);
   });
-
-  // $('#edit-rescue').on('submit', function (event) {
-  //   event.preventDefault();
-  //   let data = getFormFields(this);
-  //   authApi.editRescue(authUi.editRescue, authUi.failure, data);
-  //   console.log(data);
-  // });
 
   // adding rescue id to the submit button so it knows what object in rescues to edit
 

@@ -107,6 +107,20 @@ const editRescue = (success, failure, data, id) => {
   .fail(failure);
 };
 
+//DELETE Rescue
+const deleteRescue = (success, failure, data, id) => {
+  console.log(data, id);
+  $.ajax({
+    method: 'DELETE',
+    url: app.api + '/rescues/' + id,
+    data,
+    headers:{
+      Authorization: "Token token=" + ui.currentUser.token,
+    },
+  }).done(success)
+  .fail(failure);
+};
+
 
 
 module.exports = {
@@ -116,5 +130,6 @@ module.exports = {
   changePass,
   newRescue,
   showRescue,
-  editRescue
+  editRescue,
+  deleteRescue
 };

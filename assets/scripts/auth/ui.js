@@ -35,7 +35,7 @@ const failure = (error) => {
 let rescueUrl = [];
 if (authApi.rescue) {
 for (var i = 0; i < authApi.rescues.length; i++) {
-  rescueUrl.append(rescues[i].rescue.url);
+  rescueUrl.append([i].rescue.url);
 }
 }
 
