@@ -94,6 +94,7 @@ const showRescue = (success, failure) => {
 
 //Update Rescue
 const editRescue = (success, failure, data, id) => {
+    console.log(data);
   let rescue_id = localStorage.getItem('ID');
   $.ajax({
     method: 'PATCH',
