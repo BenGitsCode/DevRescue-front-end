@@ -55,6 +55,12 @@ const editRescue = (rescues) => {
   let rescueEditingTemplate = require('../templates/rescue-edit.handlebars');
 };
 
+const editRescueSuccess = (data) => {
+  console.log("you edited shit!");
+  currentUser.token = data.user.token;
+  currentUser.id = data.user.id;
+};
+
 module.exports = {
   failure,
   success,
@@ -62,5 +68,6 @@ module.exports = {
   signInSuccess,
   app,
   currentUser,
-  showRescues
+  showRescues,
+  editRescueSuccess
 };

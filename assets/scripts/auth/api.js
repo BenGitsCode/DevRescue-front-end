@@ -99,16 +99,10 @@ const editRescue = (success, failure, data, id) => {
   $.ajax({
     method: 'PATCH',
     url: app.api + 'rescues/' + rescue_id,
+    data,
     headers:{
       Authorization: "Token token=" + ui.currentUser.token,
     },
-    data: {
-      "rescue": {
-        "title": rescue.title,
-        "url": rescue.url,
-        "tag": rescue.tag,
-      }
-    }
   }).done(success)
   .fail(failure);
 };

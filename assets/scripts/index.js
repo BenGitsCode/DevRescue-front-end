@@ -10,6 +10,7 @@ require('./example');
 
 const authApi = require('./auth/api');
 const authUi = require('./auth/ui');
+// const getFormFields not needed?? wtf??
 
 
   // User actions
@@ -70,11 +71,12 @@ const authUi = require('./auth/ui');
     console.log($(this).attr('data-rescue-id'));
     let id = $(event.target).attr("data-rescue-id");
     $('.edit-rescue-btn').attr("data-rescue-id", id);
+    // lines 72-73 define id as the attribute of clicked td
   });
 
   $('.edit-rescue-submit').on('submit', function (event) {
     event.preventDefault();
-    console.log($(this).attr('data-rescue-id'));
+    let id = $('.edit-rescue-btn').attr("data-rescue-id");
     let data = getFormFields(this);
     authApi.editRescue(authUi.editRescueSuccess, authUi.failure, data, id);
   });
