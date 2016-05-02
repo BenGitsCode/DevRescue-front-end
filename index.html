@@ -288,11 +288,63 @@ END THIS IS THE FORM FOR EDITING RESCUES -->
       </div>
     </div>
     </div>
+    <!--END of Rescue Edit Modal -->
+
+    <!--START of Rescue DELETE Modal -->
 
 
+    <div class="modal fade" id="delete-rescue-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Delete Rescue Info </h4>
+        </div>
+        <div class="modal-body">
+              <div class="form-group">
+                <div class="container-fluid">
+              <div class="row">
+              <div class="col-md-12">
+                <form id="delete-rescue" role="form">
+                  <div class="form-group">
 
+                    <!-- Update RESCUE FORM -->
 
+                    <label for="rescueTitle">
+                      Delete Rescue Title
+                    </label>
+                    <input placeholder="Great tutorial on solving my Javascript problems" type="text" name="rescue[title]" class="form-control" id="inputRescueTitle" />
+                  </div>
+                  <div class="form-group">
 
+                    <label for="inputRescueLink">
+                      Delete Rescue Link
+                    </label>
+                    <input  placeholder="www.solvemyjsproblems.net"class="form-control" type="text" name="rescue[url]"id="inputRescueLink" />
+                  </div>
+                  <div class="form-group">
+
+                    <label for="inputTags">
+                      Delete Rescue Tags
+                    </label>
+                    <input  placeholder="problems, all, tutorial, cheatsheet, js, javascript" type="text" name="rescue[tag]" class="form-control" id="inputRescueTags" />
+                  </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              <!-- Update RESCUE FORM -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary delete-rescue-btn">Delete Rescue</button>
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!--END of Rescue DELETE Modal -->
 
 
 
