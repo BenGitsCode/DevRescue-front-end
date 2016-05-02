@@ -57,6 +57,11 @@ const editRescueSuccess = (data) => {
   console.log(data);
 };
 
+const deleteRescueSuccess = (data) => {
+  console.log("you deleted things!");
+  console.log(data);
+};
+
 module.exports = {
   failure,
   success,
@@ -65,5 +70,6 @@ module.exports = {
   app,
   currentUser,
   showRescues,
-  editRescueSuccess
+  editRescueSuccess,
+  deleteRescueSuccess
 };
