@@ -2,9 +2,22 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 //START basic css for navbar and placehodler background
 body {
-  background:url('https://c2.staticflickr.com/8/7008/6533995513_4b3417cc98_b.jpg');
+  background: url('https://c2.staticflickr.com/8/7008/6533995513_4b3417cc98_b.jpg');
   padding:50px;
   background-size:cover;
+}
+
+td {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 25px;
+  width: 100%;
+  margin: auto;
+}
+
+header {
+  text-align: center;
+  font-family: fantasy;
 }
 
 #login-dp {
