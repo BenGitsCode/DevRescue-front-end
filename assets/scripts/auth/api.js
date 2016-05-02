@@ -94,17 +94,24 @@ const showRescue = (success, failure) => {
 
 //Update Rescue
 const editRescue = (success, failure, data, id) => {
-
-  // let rescue_id = localStorage.getItem('ID');
- $.ajax({
-   method: 'PATCH',
-   url: app.api + 'rescues/' + id,
-   headers:{
-     Authorization: "Token token=" + ui.currentUser.token,
-   }
- }).done(success)
- .fail(failure);
+  let rescue_id = localStorage.getItem('ID');
+  $.ajax({
+    method: 'PATCH',
+    url: app.api + 'rescues/' + rescue_id,
+    headers:{
+      Authorization: "Token token=" + ui.currentUser.token,
+    },
+    data: {
+      "rescue": {
+        "title": rescue.title,
+        "url": rescue.url,
+        "tag": rescue.tag,
+      }
+    }
+  }).done(success)
+  .fail(failure);
 };
+
 
 
 module.exports = {

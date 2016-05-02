@@ -68,5 +68,13 @@ const authUi = require('./auth/ui');
     console.log($(this).attr('data-rescue-id'));
     let id = $(".edit-rescue-btn").attr("data-rescue-id");
     let data = getFormFields(this);
+    // authApi.editRescue(authUi.editRescueSuccess, authUi.failure, data, id);
+  });
+
+  $('.edit-rescue-submit').on('submit', function (event) {
+    event.preventDefault();
+    console.log($(this).attr('data-rescue-id'));
+    let id = $(".edit-rescue-btn").attr("data-rescue-id");
+    let data = getFormFields(this);
     authApi.editRescue(authUi.editRescueSuccess, authUi.failure, data, id);
   });
