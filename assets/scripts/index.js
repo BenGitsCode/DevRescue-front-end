@@ -75,10 +75,10 @@ const authUi = require('./auth/ui');
     authApi.editRescue(authUi.editRescueSuccess, authUi.failure, data, id);
   });
 
-  $('#delete-rescue').on('submit', function (event) {
+  $('.delete-rescue-btn').on('click', function (event) {
     event.preventDefault();
-    let id = $('.delete-rescue-btn').attr("data-rescue-id");
+    let id = $('.delete-rescue').attr("data-rescue-id");
     let data = getFormFields(this);
-    console.log(data);
+    console.log("delete this" + data);
     authApi.deleteRescue(authUi.deleteRescueSuccess, authUi.failure, data, id);
   });

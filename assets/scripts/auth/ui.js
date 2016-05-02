@@ -47,6 +47,7 @@ const showRescues = (rescues) => {
     $('.edit-rescue').on('click', function(event){
       event.preventDefault();
     $('#edit-rescue-modal').modal('show');
+    // $('.content').empty  //this makes the content div empty after an edit
     localStorage.setItem('ID', $(this).attr('data-rescue-id'));
 });
 };

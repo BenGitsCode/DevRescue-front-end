@@ -1,7 +1,7 @@
 <tr class="table-top-row">
-  <td>title</td>
-  <td>Rescue Link</td>
-  <td>Tags</td>
+  <td><b>title</b></td>
+  <td><b>Rescue Link</b></td>
+  {{!-- <td><b>Tags</b></td> --}}
 </tr>
 <tr class="table-top-row">
 {{#each rescues}}
@@ -10,9 +10,9 @@
   {{this.title}}
   <td>{{this.title}}</td>
   <td><a href="{{this.url}}">Rescue Me</a></td>
-  <td>{{this.tag}}</td>
-  <td><button type="button" class="btn btn-primary edit-rescue" data-rescue-id="{{id}}" data-toggle="modal" data-target="#NOTedit-rescue-modal">Update</button></td>
-  <td><button type="button"  class="btn btn-danger delete-rescue" data-rescue-id="{{id}}" data-toggle="modal" data-target="#NOTdelete-rescue-modal">Delete</button></td>
+  {{!-- <td>{{this.tag}}</td> --}}
+  <td><button type="button"  class="btn btn-primary edit-rescue" data-rescue-id="{{id}}" data-toggle="modal" data-target="#NOTedit-rescue-modal">Update</button></td>
+  <td><button type="button"  class="btn btn-danger delete-rescue" data-rescue-id="{{id}}" data-toggle="modal" data-target="#delete-rescue-modal">Delete</button></td>
     </div>
 </tr>
   {{/each}}
