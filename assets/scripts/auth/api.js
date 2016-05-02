@@ -93,22 +93,15 @@ const showRescue = (success, failure) => {
 };
 
 //Update Rescue
-const editRescue = (success, failure, data) => {
+const editRescue = (success, failure, data, id) => {
 
   // let rescue_id = localStorage.getItem('ID');
  $.ajax({
    method: 'PATCH',
-   url: app.api + 'rescues/' + rescue_id,
+   url: app.api + 'rescues/' + id,
    headers:{
      Authorization: "Token token=" + ui.currentUser.token,
    }
-  //  data: {
-  //    "rescue": {
-  //      "title": data.rescue.title,
-  //      "url": data.rescue.url,
-  //      "tag": data.rescue.tag,
-  //    }
-  //  },
  }).done(success)
  .fail(failure);
 };

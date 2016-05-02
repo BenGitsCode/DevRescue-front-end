@@ -44,8 +44,13 @@ const showRescues = (rescues) => {
     // console.log(rescues.rescueUrl);
     console.log(rescues);
     $('.content').append(rescueListingTemplate({rescues, rescueUrl}));
+    $('#edit-rescue-btn').on('click', function(event){
+      event.preventDefault();
+    $('#edit-rescue-modal').modal('show');
+    localStorage.setItem('ID', $(this).attr('data-rescue-id'));
+    console.log($(this).attr('data-rescue-id'));
+});
 };
-
 const editRescue = (rescues) => {
   let rescueEditingTemplate = require('../templates/rescue-edit.handlebars');
 };
