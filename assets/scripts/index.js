@@ -81,3 +81,11 @@ const authUi = require('./auth/ui');
     console.log(data);
     authApi.editRescue(authUi.editRescueSuccess, authUi.failure, data, id);
   });
+
+  $('#delete-rescue').on('submit', function (event) {
+    event.preventDefault();
+    let id = $('.delete-rescue-btn').attr("data-rescue-id");
+    let data = getFormFields(this);
+    console.log(data);
+    authApi.deleteRescue(authUi.deleteRescueSuccess, authUi.failure, data, id);
+  });
