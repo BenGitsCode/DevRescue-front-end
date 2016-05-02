@@ -45,7 +45,7 @@ const authUi = require('./auth/ui');
 
   $('.show-rescue').on('click', function (event) {
     event.preventDefault();
-    authApi.showRescue(authUi.showRescues, authUi.failure);
+    authApi.showRescue(authUi.success, authUi.failure);
     console.log(authUi.currentUser);
   });
 
@@ -56,15 +56,9 @@ const authUi = require('./auth/ui');
     console.log(data);
   });
 
-  // $('#edit-rescue').on('submit', function (event) {
-  //   event.preventDefault();
-  //   let data = getFormFields(this);
-  //   authApi.editRescue(authUi.editRescue, authUi.failure, data);
-  //   console.log(data);
-  // });
-
-  $('#edit-rescue').on('click', function (event) {
+  $('#edit-rescue').on('submit', function (event) {
     event.preventDefault();
+    console.log('stuff')
     console.log($(this).attr('data-rescue-id'));
     let id = $(".edit-rescue-btn").attr("data-rescue-id");
     let data = getFormFields(this);
@@ -73,8 +67,8 @@ const authUi = require('./auth/ui');
 
   $('.edit-rescue-submit').on('submit', function (event) {
     event.preventDefault();
-      console.log(data);
     console.log($(this).attr('data-rescue-id'));
     let data = getFormFields(this);
     authApi.editRescue(authUi.editRescueSuccess, authUi.failure, data, id);
+
   });
