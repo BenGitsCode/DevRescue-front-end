@@ -57,6 +57,7 @@ const showRescues = (rescues) => {
 const editRescueSuccess = (data) => {
   console.log("you edited this!");
   console.log(data);
+  $('#edit-rescue-modal').modal('hide');
 };
 
 const deleteRescueSuccess = (data) => {
