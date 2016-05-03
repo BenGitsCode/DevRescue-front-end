@@ -61,6 +61,7 @@ const editRescueSuccess = (data) => {
 };
 
 const deleteRescueSuccess = (data) => {
+  $('#delete-rescue-modal').modal('hide');
   console.log("you deleted things!");
   console.log(data);
 };
