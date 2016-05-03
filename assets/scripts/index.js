@@ -61,11 +61,13 @@ const authUi = require('./auth/ui');
   // adding rescue id to the submit button so it knows what object in rescues to edit
 
   $('.content').on('click', '.edit-rescue', function (event) {
+    //   /////////////////// 'button' would also work, this is targeting the button with edit-rescue class
     event.preventDefault();
     // console.log($(this).attr('data-rescue-id'));
     let id = $(event.target).attr("data-rescue-id");
     $('.edit-rescue-btn').attr("data-rescue-id", id);
     // lines 72-73 define id as the attribute of clicked td
+    console.log(event.target);
   });
 
   //this id of cell clicked as attr to data-rescue-id
