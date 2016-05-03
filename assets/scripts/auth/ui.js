@@ -55,7 +55,7 @@ let displayRescues = function(rescues){
 
 
 // Moved ajax get for rescues from api to here
-const showRescues = (success, failure) => {
+const showRescues = () => {
   $.ajax({
     method: "GET",
     url: app.api +'/users/' + currentUser.id +'/rescues/',
