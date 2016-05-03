@@ -61,7 +61,7 @@ const authUi = require('./auth/ui');
 
   $('.content').on('click', '.edit-rescue', function (event) {
     event.preventDefault();
-    console.log($(this).attr('data-rescue-id'));
+    // console.log($(this).attr('data-rescue-id'));
     let id = $(event.target).attr("data-rescue-id");
     $('.edit-rescue-btn').attr("data-rescue-id", id);
     // lines 72-73 define id as the attribute of clicked td
