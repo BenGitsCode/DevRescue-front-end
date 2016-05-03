@@ -315,7 +315,7 @@ webpackJsonp([0],[
 	'use strict';
 
 	var app = {
-	  api: 'http://dev-rescue.herokuapp.com'
+	  api: 'https://ancient-shelf-91552.herokuapp.com'
 	};
 
 	module.exports = app;
