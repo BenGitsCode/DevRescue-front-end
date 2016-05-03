@@ -6,7 +6,8 @@
 // use require without a reference to ensure a file is bundled
 require('./example');
 
-// const getFormFields = require('../../get-form-fields.js');
+
+const getFormFields = require('../../lib/get-form-fields');
 
 const authApi = require('./auth/api');
 const authUi = require('./auth/ui');

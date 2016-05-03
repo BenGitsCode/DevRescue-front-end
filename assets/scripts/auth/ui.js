@@ -39,6 +39,7 @@ for (var i = 0; i < authApi.rescues.length; i++) {
 }
 }
 
+// this shows rescues by appending the template
 const showRescues = (rescues) => {
   let rescueListingTemplate = require('../templates/rescue-show.handlebars');
     // console.log(rescues.rescueUrl);
