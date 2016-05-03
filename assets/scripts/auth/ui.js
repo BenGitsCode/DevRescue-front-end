@@ -26,9 +26,9 @@ let displayRescues = function(rescues){
       localStorage.setItem('ID', $(this).attr('data-attribute'));
       //sets value of 'edit rescue' fields so that they don't default to empty
       // and accidentally delete stuff
-      $('#inputRescueTitle').val($(this).find('.rescue-title').text());
-      $('#inputRescueLink').val($(this).find('.rescue-url').text());
-      $('#inputRescueTags').val($(this).find('.rescue-tags').text());
+      $('#inputRescueTitle').val($(this).find('.rescues-title').text());
+      $('#inputRescueLink').val($(this).find('.rescues-url').text());
+      $('#inputRescueTags').val($(this).find('.rescues-tags').text());
       $('#edit-rescue-modal').modal('show');
       // the above would show edit modal. but click should already do that
       //adds rescue info to the rescue input fields
@@ -42,7 +42,7 @@ let displayRescues = function(rescues){
 
 
 // Moved ajax get for rescues from api to here
-const showRescues = (success, failure) => {
+const showRescues = () => {
   $.ajax({
     method: "GET",
     url: app.api +'/users/' + currentUser.id +'/rescues/',
