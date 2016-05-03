@@ -7,10 +7,10 @@
 {{#each rescues}}
     <div class="show-rescue">
   {{this.title}}
-  <td class="rescue-title">{{this.title}}</td>
-  <td class="rescue-url"><a target="_blank" href="{{this.url}}">Rescue Me</a></td>
-  <td class="rescue-tag">{{this.tag}}</td> 
-  <td><button type="button"  class="btn btn-primary edit-rescue" data-rescue-id="{{id}}" data-toggle="modal" data-target="#NOTedit-rescue-modal">Update</button></td>
+  <td data-rescue-id="{{this.id}}" class="rescue-title rescue-{{this.id}}">{{this.title}}</td>
+  <td data-rescue-id="{{this.id}}" class="rescue-url rescue-{{this.id}}"><a target="_blank" href="{{this.url}}">Rescue Me</a></td>
+  <td data-rescue-id="{{this.id}}" class="rescue-tag rescue-{{this.id}}">{{this.tag}}</td>
+  <td><button type="button"  class="btn btn-primary edit-rescue" data-rescue-id="{{id}}" data-toggle="modal" data-target="#NOTdata-rescue-i"" edit-rescue-modal">Update</button></td>
   <td><button type="button"  class="btn btn-danger delete-rescue" data-rescue-id="{{id}}" data-toggle="modal" data-target="#delete-rescue-modal">Delete</button></td>
     </div>
 </tr>

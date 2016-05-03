@@ -20,19 +20,35 @@ let displayRescues = function(rescues){
     $('.content').append(rescuesListingTemplate({
       rescues : rescues.rescues
     }));
+
+  $('.content').on('click', '.edit-rescue', function(){
+    let currentRescue = $(event.target).data('rescue-id');
+    $('.rescues-title.rescue-'+currentRescue).text();
+    console.log($('.rescues-title.rescue-'+currentRescue));
+
+  });
+
+
+
+
+
+
+
+
     //when rescue panel is clicked to open edit modal
-    $('.edit-rescue').on('click', function() {
-      //load clicked rescue ID from data-attribute into local storage for use in auth/api.editAlbum call
-      localStorage.setItem('ID', $(this).attr('data-attribute'));
-      //sets value of 'edit rescue' fields so that they don't default to empty
-      // and accidentally delete stuff
-      $('#inputRescueTitle').val($(this).find('.rescues-title').text());
-      $('#inputRescueLink').val($(this).find('.rescues-url').text());
-      $('#inputRescueTags').val($(this).find('.rescues-tags').text());
-      $('#edit-rescue-modal').modal('show');
-      // the above would show edit modal. but click should already do that
-      //adds rescue info to the rescue input fields
-      });
+    // $('.edit-rescue').on('click', function() {
+    //   //load clicked rescue ID from data-attribute into local storage for use in auth/api.editAlbum call
+    //   // localStorage.setItem('ID', $(this).attr('data-attribute'));
+    //   //sets value of 'edit rescue' fields so that they don't default to empty
+    //   // and accidentally delete stuff
+    //   $('#inputRescueTitle').val($(this).find('.rescues-title').text());
+    //   $('#inputRescueLink').val($(this).find('.rescues-url').text());
+    //   $('#inputRescueTags').val($(this).find('.rescues-tags').text());
+    //   $('#edit-rescue-modal').modal('show');
+    //   console.log($(this).siblings('.rescues-title').text());
+    //   // the above would show edit modal. but click should already do that
+    //   //adds rescue info to the rescue input fields
+    //   });
     //shows add rescue modal
     $('.open-new-rescue').on('click', function(event){
       event.preventDefault();
