@@ -129,7 +129,6 @@ module.exports = {
   signOut,
   changePass,
   newRescue,
-  showRescue,
   editRescue,
   deleteRescue
 };

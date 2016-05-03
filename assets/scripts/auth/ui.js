@@ -4,7 +4,10 @@ const app = require('../app-data');
 // const newGame = require('./index.js');
 const authApi = require('./api');
 
-
+let currentUser = {
+  token:'',
+  id: undefined
+};
 
 
 //display Rescues function used in getAlbums api ajax call for GET below this.
@@ -12,8 +15,8 @@ const authApi = require('./api');
 let displayRescues = function(rescues){
     $('.landing-div').hide(); //this hides the landing page div
     $('.content').html(''); //this clears the content in my table html
-  let rescuesDisplayTemplate = require('../templates/rescue-show.handlebars');
-  console.log("dispaly rescues", rescues);
+  let rescuesListingTemplate = require('../templates/rescue-show.handlebars');
+  console.log("display rescues", rescues);
     $('.content').append(rescuesListingTemplate({
       rescues : rescues.rescues
     }));
@@ -26,14 +29,14 @@ let displayRescues = function(rescues){
       $('#inputRescueTitle').val($(this).find('.rescue-title').text());
       $('#inputRescueLink').val($(this).find('.rescue-url').text());
       $('#inputRescueTags').val($(this).find('.rescue-tags').text());
-      // $('#edit-rescue-modal').modal('show');
+      $('#edit-rescue-modal').modal('show');
       // the above would show edit modal. but click should already do that
       //adds rescue info to the rescue input fields
       });
     //shows add rescue modal
     $('.open-new-rescue').on('click', function(event){
       event.preventDefault();
-      $('#newAlbumModal').modal('show');
+      $('#newModal').modal('show');
   });
 };
 
@@ -42,10 +45,10 @@ let displayRescues = function(rescues){
 const showRescue = (success, failure) => {
   $.ajax({
     method: "GET",
-    url: app.api +'/users/' + ui.currentUser.id +'/rescues/',
+    url: app.api +'/users/' + currentUser.id +'/rescues/',
     dataType: 'json',
     headers: {
-      Authorization: "Token token=" + ui.currentUser.token
+      Authorization: "Token token=" + currentUser.token
     },
     // data: {
     //   "rescue": {
@@ -61,11 +64,6 @@ const showRescue = (success, failure) => {
 });
 };
 
-
-let currentUser = {
-  token:'',
-  id: undefined
-};
 
 const signInSuccess = (data) => {
   currentUser.token = data.user.token;
@@ -96,20 +94,20 @@ for (var i = 0; i < authApi.rescues.length; i++) {
   rescueUrl.append([i].rescue.url);
 }
 }
-
+// migth be obsolete after ui api transfer changes
 // this shows rescues by appending the template
-const showRescues = (rescues) => {
-  let rescueListingTemplate = require('../templates/rescue-show.handlebars');
-    // console.log(rescues.rescueUrl);
-    console.log(rescues);
-    $('.content').append(rescueListingTemplate({rescues, rescueUrl}));
-    $('.edit-rescue').on('click', function(event){
-      event.preventDefault();
-    $('#edit-rescue-modal').modal('show');
-    // $('.content').empty  //this makes the content div empty after an edit
-    localStorage.setItem('ID', $(this).attr('data-rescue-id'));
-});
-};
+// const showRescues = (rescues) => {
+//   let rescueListingTemplate = require('../templates/rescue-show.handlebars');
+//     // console.log(rescues.rescueUrl);
+//     console.log(rescues);
+//     $('.content').append(rescueListingTemplate({rescues, rescueUrl}));
+//     $('.edit-rescue').on('click', function(event){
+//       event.preventDefault();
+//     $('#edit-rescue-modal').modal('show');
+//     // $('.content').empty  //this makes the content div empty after an edit
+//     localStorage.setItem('ID', $(this).attr('data-rescue-id'));
+// });
+// };
 
 
 const editRescueSuccess = (data) => {
@@ -133,7 +131,7 @@ module.exports = {
   signInSuccess,
   app,
   currentUser,
-  showRescues,
+  showRescue,
   editRescueSuccess,
   deleteRescueSuccess
 };
