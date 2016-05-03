@@ -16,7 +16,7 @@ let displayRescues = function(rescues){
     $('.landing-div').hide(); //this hides the landing page div
     $('.content').html(''); //this clears the content in my table html
   let rescuesListingTemplate = require('../templates/rescue-show.handlebars');
-  console.log("display rescues", rescues);
+  console.log("display rescues");
     $('.content').append(rescuesListingTemplate({
       rescues : rescues.rescues
     }));
@@ -41,8 +41,8 @@ let displayRescues = function(rescues){
 };
 
 
-// Moved ajasx get for rescues from api to here
-const showRescue = (success, failure) => {
+// Moved ajax get for rescues from api to here
+const showRescues = (success, failure) => {
   $.ajax({
     method: "GET",
     url: app.api +'/users/' + currentUser.id +'/rescues/',
@@ -60,6 +60,7 @@ const showRescue = (success, failure) => {
   })
   .done(function(rescues){
     console.log('get rescue successful');
+    console.log(rescues);
   displayRescues(rescues);
 });
 };
@@ -114,12 +115,14 @@ const editRescueSuccess = (data) => {
   console.log("you edited this!");
   console.log(data);
   $('#edit-rescue-modal').modal('hide');
+  showRescues();
 };
 
 const deleteRescueSuccess = (data) => {
   $('#delete-rescue-modal').modal('hide');
   console.log("you deleted things!");
   console.log(data);
+  showRescues();
 };
 
 
@@ -131,7 +134,7 @@ module.exports = {
   signInSuccess,
   app,
   currentUser,
-  showRescue,
+  showRescues,
   editRescueSuccess,
   deleteRescueSuccess
 };
