@@ -26,12 +26,25 @@ let displayRescues = function(rescues){
       localStorage.setItem('ID', $(this).attr('data-attribute'));
       //sets value of 'edit rescue' fields so that they don't default to empty
       // and accidentally delete stuff
-      $('#inputRescueTitle').val($(this).find('.rescue-title').text());
-      $('#inputRescueLink').val($(this).find('.rescue-url').text());
-      $('#inputRescueTags').val($(this).find('.rescue-tags').text());
+
+      // $('#inputRescueTitle').val($(this).find('.rescue-title').text());
+      let rescueTitleText = $(this).closest('tr').children('.rescue-title').text();
+      $('#edit-rescue #inputRescueTitle').val(rescueTitleText);
+
+      let rescueUrlText = $(this).closest('tr').children('.rescue-url').text();
+      $('#edit-rescue #inputRescueLink').val(rescueUrlText);
+
+      let rescueTagText = $(this).closest('tr').children('.rescue-tag').text();
+      $('#edit-rescue #inputRescueTags').val(rescueTagText);
+
+
+
+
+      // This is my first attempt at the fill form, it doesn't work
+      // but talk about growth yo look at that garbage!
+      // $('#inputRescueLink').val($(this).find('.rescue-url').text());
+      // $('#inputRescueTags').val($(this).find('.rescue-tags').text());
       $('#edit-rescue-modal').modal('show');
-      // the above would show edit modal. but click should already do that
-      //adds rescue info to the rescue input fields
       });
     //shows add rescue modal
     $('.open-new-rescue').on('click', function(event){
