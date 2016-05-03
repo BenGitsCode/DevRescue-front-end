@@ -67,6 +67,7 @@ const authUi = require('./auth/ui');
     // lines 72-73 define id as the attribute of clicked td
   });
 
+  //this id of cell clicked as attr to data-rescue-id
   $('#edit-rescue').on('submit', function (event) {
     event.preventDefault();
     let id = $('.edit-rescue-btn').attr("data-rescue-id");
