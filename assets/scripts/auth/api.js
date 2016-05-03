@@ -72,25 +72,25 @@ const newRescue = (success, failure, data) => {
   .fail(failure);
 };
 
-const showRescue = (success, failure) => {
-  $.ajax({
-    method: "GET",
-    url: app.api +'/users/' + ui.currentUser.id +'/rescues/',
-    dataType: 'json',
-    headers: {
-      Authorization: "Token token=" + ui.currentUser.token
-    },
-    // data: {
-    //   "rescue": {
-    //     "title": rescue.title,
-    //     "url": rescue.url,
-    //     "tag": rescue.tag,
-    //   }
-    // }
-  })
-  .done(success)
-  .fail(failure);
-};
+// const showRescue = (success, failure) => {
+//   $.ajax({
+//     method: "GET",
+//     url: app.api +'/users/' + ui.currentUser.id +'/rescues/',
+//     dataType: 'json',
+//     headers: {
+//       Authorization: "Token token=" + ui.currentUser.token
+//     },
+//     // data: {
+//     //   "rescue": {
+//     //     "title": rescue.title,
+//     //     "url": rescue.url,
+//     //     "tag": rescue.tag,
+//     //   }
+//     // }
+//   })
+//   .done(success)
+//   .fail(failure);
+// };
 
 //Update Rescue
 const editRescue = (success, failure, data, id) => {

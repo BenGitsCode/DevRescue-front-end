@@ -5,7 +5,6 @@
 </tr>
 <tr class="table-top-row">
 {{#each rescues}}
-{{#each this}}
     <div class="show-rescue">
   {{this.title}}
   <td>{{this.title}}</td>
@@ -15,7 +14,6 @@
   <td><button type="button"  class="btn btn-danger delete-rescue" data-rescue-id="{{id}}" data-toggle="modal" data-target="#delete-rescue-modal">Delete</button></td>
     </div>
 </tr>
-  {{/each}}
 {{/each}}
 
   {{#each rescueUrl}}
