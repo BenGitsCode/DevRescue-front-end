@@ -91,6 +91,8 @@ const signOutSuccess = () => {
   currentUser.id = undefined;
   console.log(app);
   console.log("You signed OUT bro. Sweet!");
+  $('.content').html('');
+  $('.landing-div').show();
 };
 
 const success = (data) => {
