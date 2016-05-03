@@ -315,7 +315,7 @@ webpackJsonp([0],[
 	'use strict';
 
 	var app = {
-	  api: 'https://dev-rescue.herokuapp.com'
+	  api: 'http://dev-rescue.herokuapp.com'
 	};
 
 	module.exports = app;
