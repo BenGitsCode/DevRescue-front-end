@@ -22,16 +22,13 @@ let displayRescues = function(rescues){
       //load clicked rescue ID from data-attribute into local storage for use in auth/api.editAlbum call
       localStorage.setItem('ID', $(this).attr('data-attribute'));
       //sets value of 'edit rescue' fields so that they don't default to empty
-      $('#editAlbumTitle').val($(this).find('.rescue-title').text());
-      $('#editAlbumArtist').val($(this).find('.rescue-artist').text());
-      $('#editAlbumThoughts').val($(this).find('.rescue-thoughts').text());
-      $('#editAlbumModal').modal('show');
-      //adds rescue info to the rescue cover fields
-      $('#rescueCoverTitle').val($(this).find('.rescue-title').text());
-      $('#rescueCoverArtist').val($(this).find('.rescue-artist').text());
-      if ($('.cover-image').attr('src') !== ''){
-        $('.delete-cover').show();
-      }
+      // and accidentally delete stuff
+      $('#inputRescueTitle').val($(this).find('.rescue-title').text());
+      $('#inputRescueLink').val($(this).find('.rescue-url').text());
+      $('#inputRescueTags').val($(this).find('.rescue-tags').text());
+      // $('#edit-rescue-modal').modal('show');
+      // the above would show edit modal. but click should already do that
+      //adds rescue info to the rescue input fields
       });
     //shows add rescue modal
     $('.open-new-rescue').on('click', function(event){
