@@ -1,7 +1,7 @@
 'use strict';
 
 const app = {
-  api: 'https://dev-rescue.herokuapp.com',
+  api: 'http://dev-rescue.herokuapp.com',
   };
 
 
