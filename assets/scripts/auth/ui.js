@@ -22,7 +22,7 @@ let displayRescues = function(rescues){
     }));
     //when rescue panel is clicked to open edit modal
     $('.edit-rescue').on('click', function() {
-      //load clicked rescue ID from data-attribute into local storage for use in auth/api.editAlbum call
+      //load clicked rescue ID from data-attribute into local storage for use in auth/api.editRescue call
       localStorage.setItem('ID', $(this).attr('data-attribute'));
       //sets value of 'edit rescue' fields so that they don't default to empty
       // and accidentally delete stuff
@@ -31,8 +31,14 @@ let displayRescues = function(rescues){
       let rescueTitleText = $(this).closest('tr').children('.rescue-title').text();
       $('#edit-rescue #inputRescueTitle').val(rescueTitleText);
 
-      let rescueUrlText = $(this).closest('tr').children('.rescue-url').text();
+      let rescueUrlText = $(this).closest('tr').children().contents('a').attr('href');
       $('#edit-rescue #inputRescueLink').val(rescueUrlText);
+      // the above varies from title and url in that it selects the same this, tr
+      // and children of click on ln 24 but then also selects the 'a' anchor
+      // tag in their contents and the 'href' attribute
+      // this lets the variable fill the url edit form with the link and not
+      // Rescue Me as text.
+
 
       let rescueTagText = $(this).closest('tr').children('.rescue-tag').text();
       $('#edit-rescue #inputRescueTags').val(rescueTagText);
