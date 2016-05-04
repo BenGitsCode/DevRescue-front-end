@@ -98,10 +98,10 @@ webpackJsonp([0],[
 	  // console.log(event.target);
 	});
 
-	//this id of cell clicked as attr to data-rescue-id
-	$('#edit-rescue').on('submit', function (event) {
+	//this stores id of cell clicked as attr to data-rescue-id
+	$('.edit-rescue').on('click', function (event) {
 	  event.preventDefault();
-	  var id = $('.edit-rescue-btn').attr("data-rescue-id");
+	  var id = $(event.target).attr("data-rescue-id");
 	  var data = getFormFields(this);
 	  console.log(data);
 	  authApi.editRescue(authUi.editRescueSuccess, authUi.failure, data, id);
@@ -109,10 +109,21 @@ webpackJsonp([0],[
 
 	$('.delete-rescue-btn').on('click', function (event) {
 	  event.preventDefault();
-	  var id = $('.delete-rescue').attr("data-rescue-id");
+
 	  var data = getFormFields(this);
+	  var id = $(this).attr('data-rescue-id');
 	  console.log("delete this" + data);
 	  authApi.deleteRescue(authUi.deleteRescueSuccess, authUi.failure, data, id);
+	});
+
+	$('.content').on('click', '.delete-rescue', function (event) {
+	  //   /////////////////// 'button' would also work, this is targeting the button with edit-rescue class
+	  event.preventDefault();
+	  // console.log($(this).attr('data-rescue-id'));
+	  var id = $(event.target).attr("data-rescue-id");
+	  $('.delete-rescue-btn').attr("data-rescue-id", id);
+	  // lines 72-73 define id as the attribute of clicked td
+	  // console.log(event.target);
 	});
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
