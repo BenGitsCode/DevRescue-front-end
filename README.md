@@ -17,6 +17,23 @@ __User Stories__
 
 -As a user, I want to be able to delete bookmakrs i've saved
 
+### Minor changes to be made
+
+-Landing page
+-user sign up sign in hide upon signIn success
+-move user actions into navbar
+-navbar aesthetics
+-overall aesthetics, less bootstrappy
+-70s color scheme, the nostalgic kind not the ugly kind
+
+
+## Future changes
+
+-Ability to sort/search rescues by tags
+-Ability for all users to see master database of all rescues
+-Ability to up and downvote resources  in that master database and sort
+-Option to play smooth rock while you read the resource you just opened.
+
 
 
 
