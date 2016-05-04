@@ -99,18 +99,25 @@ webpackJsonp([0],[
 	  // console.log(event.target);
 	});
 
-	//this stores id of cell clicked as attr to data-rescue-id
-	$('.edit-rescue').on('click', function (event) {
+	// this stores id of cell clicked as attr to data-rescue-id
+	$('#edit-rescue').on('submit', function (event) {
 	  event.preventDefault();
-	  var id = $(event.target).attr("data-rescue-id");
+	  var id = $('.edit-rescue-btn').attr("data-rescue-id");
 	  var data = getFormFields(this);
 	  console.log(data);
 	  authApi.editRescue(authUi.editRescueSuccess, authUi.failure, data, id);
 	});
+	//
+	//  $('#edit-rescue').on('submit', function (event) {
+	//   event.preventDefault();
+	//   let id = $(event.target).attr("data-rescue-id");
+	//   let data = getFormFields(this);
+	//   console.log(data);
+	//   authApi.editRescue(authUi.editRescueSuccess, authUi.failure, data, id);
+	// });
 
 	$('.delete-rescue-btn').on('click', function (event) {
 	  event.preventDefault();
-
 	  var data = getFormFields(this);
 	  var id = $(this).attr('data-rescue-id');
 	  console.log("delete this" + data);
