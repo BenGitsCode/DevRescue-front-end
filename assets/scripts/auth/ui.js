@@ -84,6 +84,7 @@ const signInSuccess = (data) => {
   currentUser.id = data.user.id;
   console.log(app);
   console.log("Sign in successful");
+  showRescues();
 };
 
 const signOutSuccess = () => {
@@ -125,6 +126,12 @@ for (var i = 0; i < authApi.rescues.length; i++) {
 // });
 // };
 
+// const newRescueSuccess = (data) => {
+//   console.log("You added things you user you");
+//   console.log(data);
+//   showRescues();
+// };
+// not calling properly
 
 const editRescueSuccess = (data) => {
   console.log("you edited this!");
