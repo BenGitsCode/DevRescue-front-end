@@ -56,6 +56,7 @@ const authUi = require('./auth/ui');
     let data = getFormFields(this);
     authApi.newRescue(authUi.success, authUi.failure, data);
     console.log(data);
+    authUi.showRescues();
   });
 
   // adding rescue id to the submit button so it knows what object in rescues to edit
