@@ -92,7 +92,7 @@ const signOutSuccess = () => {
   console.log(app);
   console.log("You signed OUT bro. Sweet!");
   $('.content').html('');
-  $('.landing-div').show();
+  // $('.landing-div').show(); no landing div yet
 };
 
 const success = (data) => {
