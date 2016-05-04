@@ -1,13 +1,7 @@
 # DevRescue
+An application for saving and managing bookmarks.
 
 
-## Wut is dis?
-
-Install with `npm install`.
-
--   [Webpack](https://webpack.github.io)
--   [Bootstrap](http://getbootstrap.com)
--   [Handlebars.js](http://handlebarsjs.com)
 
 
 __User Stories__
@@ -32,3 +26,6 @@ https://gyazo.com/9550984898e12bc7ea5c6a30eb60f10b
 
 ## Deployed Heroku Link
 http://benjamski.github.io/DevRescue-front-end/
+
+## Back end Repo
+https://github.com/Benjamski/DevRescue-back-end
