@@ -70,8 +70,8 @@ const authUi = require('./auth/ui');
     // console.log(event.target);
   });
 
-  //this id of cell clicked as attr to data-rescue-id
-  $('#edit-rescue').on('submit', function (event) {
+  //this stores id of cell clicked as attr to data-rescue-id
+  $('.edit-rescue').on('click', function (event) {
     event.preventDefault();
     let id = $('.edit-rescue-btn').attr("data-rescue-id");
     let data = getFormFields(this);
@@ -81,7 +81,7 @@ const authUi = require('./auth/ui');
 
   $('.delete-rescue-btn').on('click', function (event) {
     event.preventDefault();
-    let id = $('.delete-rescue').attr("data-rescue-id");
+    let id = $('#delete-rescue').attr("data-rescue-id");
     let data = getFormFields(this);
     console.log("delete this" + data);
     authApi.deleteRescue(authUi.deleteRescueSuccess, authUi.failure, data, id);
