@@ -84,6 +84,7 @@ webpackJsonp([0],[
 	  var data = getFormFields(this);
 	  authApi.newRescue(authUi.success, authUi.failure, data);
 	  console.log(data);
+	  authUi.showRescues();
 	});
 
 	// adding rescue id to the submit button so it knows what object in rescues to edit
@@ -329,6 +330,7 @@ webpackJsonp([0],[
 	  api: 'https://ancient-shelf-91552.herokuapp.com'
 	};
 
+	// http://localhost:3000
 	module.exports = app;
 
 /***/ },
@@ -414,6 +416,7 @@ webpackJsonp([0],[
 	  currentUser.id = data.user.id;
 	  console.log(app);
 	  console.log("Sign in successful");
+	  showRescues();
 	};
 
 	var signOutSuccess = function signOutSuccess() {
@@ -422,7 +425,7 @@ webpackJsonp([0],[
 	  console.log(app);
 	  console.log("You signed OUT bro. Sweet!");
 	  $('.content').html('');
-	  $('.landing-div').show();
+	  // $('.landing-div').show(); no landing div yet
 	};
 
 	var success = function success(data) {
@@ -454,6 +457,13 @@ webpackJsonp([0],[
 	//     localStorage.setItem('ID', $(this).attr('data-rescue-id'));
 	// });
 	// };
+
+	// const newRescueSuccess = (data) => {
+	//   console.log("You added things you user you");
+	//   console.log(data);
+	//   showRescues();
+	// };
+	// not calling properly
 
 	var editRescueSuccess = function editRescueSuccess(data) {
 	  console.log("you edited this!");
