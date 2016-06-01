@@ -57,6 +57,7 @@ const authUi = require('./auth/ui');
     authApi.newRescue(authUi.success, authUi.failure, data);
     console.log(data);
     authUi.showRescues();
+    $('#new-rescue-modal').modal('hide');
   });
 
   // adding rescue id to the submit button so it knows what object in rescues to edit
