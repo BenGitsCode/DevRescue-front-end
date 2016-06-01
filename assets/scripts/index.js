@@ -28,6 +28,7 @@ const authUi = require('./auth/ui');
     event.preventDefault();
     authApi.signIn(authUi.signInSuccess, authUi.failure, data);
     console.log(data);
+    $('#sign-in-modal').modal('hide');
   });
 
   $('.sign-out').on('click', function (event) {
