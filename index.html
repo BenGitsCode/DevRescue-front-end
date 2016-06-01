@@ -93,10 +93,10 @@
                     <!-- original-->
 
                     <form class="form-inline" id="sign-in">
-                      <div class="form-group">
-                        <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
-                        <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
-                        <button class="btn btn-primary btn-block" type="submit">Sign In</button>
+                      <div>
+                        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#sign-in-modal">
+                          Sign In
+                        </button>
                       </div>
                     </form>
                     <li class="divider"></li>
@@ -129,14 +129,7 @@
 
 
 
-  <!-- SIGN IN-->
-  <form class="form-inline sign-in">
-    <div class="form-group">
-      <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
-      <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
-      <button class="btn btn-primary btn-block" type="submit">Sign In</button>
-    </div>
-  </form>
+
   <!-- CHANGE PASS-->
   <form class="form-inline change-password">
     <div class="form-group">
@@ -166,7 +159,54 @@
 
 
 
-  <!--START of MODAL CITY-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--START of MODAL CITY-->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Sign In Old Friend!</h4>
+      </div>
+      <div class="modal-body">
+        <!-- SIGN IN-->
+        <form class="form-inline sign-in">
+          <div class="form-group">
+            <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+            <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+            <button class="btn btn-primary btn-block" type="submit">Sign In</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
   <!--ADD RESCUE MODAL -->
